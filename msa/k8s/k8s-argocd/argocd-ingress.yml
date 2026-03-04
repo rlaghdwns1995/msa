@@ -9,15 +9,14 @@ metadata:
 spec:
   tls:
   - hosts:
-      - argo.aws-esk.com
-    secretName: argo-aws-esk-com-tls
+      - argo.g87m2.academy
+    secretName: argo-g87m2-academy-tls
   rules:
-  - host: argo.aws-esk.com
+  - host: argo.g87m2.academy
     http:
       paths:
         - path: /
           pathType: Prefix
-
           backend:
             service:
               name: argocd-server

@@ -8,7 +8,7 @@ metadata:
   name: cluster-autoscaler
   namespace: kube-system
   annotations:
-    eks.amazonaws.com/role-arn: arn:aws:iam::895421295243:role/autoscaling-pod-role
+    eks.amazonaws.com/role-arn: arn:aws:iam::446100759833:role/autoscaler-role
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
@@ -160,8 +160,8 @@ spec:
           command:
             - ./cluster-autoscaler
             - --v=4
-            - --cluster-name=my-cluster
             - --stderrthreshold=info
+            - --cluster-name=my-cluster
             - --cloud-provider=aws
             - --skip-nodes-with-local-storage=false
             - --expander=least-waste
